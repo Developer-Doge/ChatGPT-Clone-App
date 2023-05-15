@@ -8,10 +8,10 @@
   
   <h1 class="h1">Pocketchat</h1>
   
-  <Login />
+  <Login/>
   
   {#if $currentUser}
   
-	<Messages />
+	<Messages/>
 	
   {/if}
