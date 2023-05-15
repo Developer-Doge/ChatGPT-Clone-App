@@ -3,7 +3,7 @@
   import { currentUser, pb } from './pocketbase';
 
   let newMessage: string;
-  let messages = [];
+  let messages: any[] = [];
   let unsubscribe: () => void;
 
   onMount(async () => {
@@ -36,6 +36,9 @@
   });
 
   async function sendMessage() {
+    if (!$currentUser) {
+      return;
+    }
     const data = {
       text: newMessage,
       user: $currentUser.id,
